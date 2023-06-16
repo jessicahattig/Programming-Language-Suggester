@@ -7,7 +7,10 @@
 
 
 
-
+function calcSurvey(event) {
+  event.preventDefault();
+  const
+}
 
 
 
