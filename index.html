@@ -8,7 +8,7 @@
 <body>
   <h1>Programming Language Suggester</h1>
   <p>With the abundance of programming languages available, it can often be daunting to determine the best path for advancing your programming language knowledge. However, this suggester streamlines the process by assisting you in discovering the programming language that is most suitable for your next learning endeavor! Take the survey below to unveil the language that would be optimal for you to learn next.</p>
-  <form id="questionnaire">
+  <form id ="questionnaire">
     <label for="firstQuestion">1. Are you interested in solving complex problems?</label>
     <input id="firstQuestion" type="text" name="survey" placeholder="Yes or No">
     <br>
@@ -23,12 +23,11 @@
     <br>
     <button type="submit">Results</button>
   </form>
+  <button type="button" class="hidden" id="reset">Reset</button>
   <br>
   <div id="surveyResults" class="hidden">
     <h2>You should learn next</h2>
     <p id="output"></p>
   </div>
-  <br>
-  <button type="button" class="hidden" id="reset">Reset</button>
 </body>
 </html>
