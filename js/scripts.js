@@ -35,7 +35,7 @@ results.removeAttribute("class");
 event.preventDefault();
 
 document.getElementById("output").inerText = result;
-)};
+};
 
 
 
