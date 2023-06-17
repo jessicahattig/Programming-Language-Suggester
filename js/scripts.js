@@ -16,8 +16,15 @@ form.addEventListener("submit", function(event) {
   const question4 = document.getElementById("question4Input").value;
   const question5 = document.getElementById("question5Input").value;
 
-// Calling the function to determine the recommended language.
+//Call the function to determine the recommended language.
   const recommendedLanguage = determineRecommendedLanguage(question1, question2, question3, question4, question5);
+
+//Display recommended language
+document.getElementById("output").inerText = recommendedLanguage;
+
+//Show the results section
+results.removeAttribute("class");
+});
 
 let result;
 if (question1 === "Yes") {
@@ -32,10 +39,9 @@ if (question1 === "Yes") {
   result = "C#!"
 }
 
-results.removeAttribute("class");
-event.preventDefault();
 
-document.getElementById("output").inerText = result;
+
+
 
 
 
