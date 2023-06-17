@@ -1,14 +1,10 @@
-
-
-
-
-
-
-
+//Wait for the DOM to load
 window.addEventListener("load", function() {
-  let form = document.getElementById("form");
-  let resetBtn = document.querySelector("button#reset");
-  let results = document.querySelector("div#surveyResults");
+//Get References to the form and result elements
+  const form = document.querySelector("form");
+  const reveal = document.getElementById("results");
+  const results = document.getElementById("output");
+
 
 form.addEventListener("submit", function(event) {
   event.preventDefault();
@@ -35,7 +31,7 @@ results.removeAttribute("class");
 event.preventDefault();
 
 document.getElementById("output").inerText = result;
-};
+
 
 
 
