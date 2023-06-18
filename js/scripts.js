@@ -17,25 +17,21 @@ window.addEventListener("load", function() {
 form.addEventListener("submit", function(event) {
   event.preventDefault(); //Prevent form submission
 
-//Get Survey responses
+//Call the function to determine the recommended language, calc results and display recommended language
+function result(event) {
+  let recommendedLanguage = document.getElementById("results");
+  recommendedLanguage.removeAttribute("class")
+  event.preventDefault();
+
+  //Get Survey values
   const q1 = document.getElementById("question1Input").value;
   const q2 = document.getElementById("question2Input").value;
   const q3 = document.getElementById("question3Input").value;
   const q4 = document.getElementById("question4Input").value;
   const q5 = document.getElementById("question5Input").value;
 
-//Call the function to determine the recommended language.
-  let recommendedLanguage = determineRecommendedLanguage(q1, q2, q3, q4, q5);
-
-  //Display recommended language
-document.getElementById("output").inerText = recommendedLanguage;
-
-//Show the result section
-results.removeAttribute("class");
-});
-
-//Function to determine the recommended language based on survey results
-function determineRecommendedLanguage (q1, q1, q3, q4, q5) {
+  //Branching
+  let result;
   if (q1 ==="Yes") {
     result = python;
   } else if (q2 === "Yes") {
@@ -57,4 +53,6 @@ function determineRecommendedLanguage (q1, q1, q3, q4, q5) {
   } else if (q5 === "No") {
     result = go;
   }
-};
+
+document.getElementById("output").innerText = result;
+}
