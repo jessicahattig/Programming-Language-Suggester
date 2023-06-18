@@ -5,24 +5,16 @@ const js = "JavaScript is a versatile, interpreted language primarily used for f
 const go = "Go (often referred to as Golang) is a statically-typed, compiled language developed by Google. It is designed for efficiency and simplicity, offering built-in support for concurrency. Go is often used for developing scalable network applications, system tools, and distributed systems."
 const c = "C# (pronounced C-sharp) is a statically-typed language developed by Microsoft. It is commonly used for building Windows applications, web applications, and games using the .NET framework. C# emphasizes strong typing, scalability, and performance."
 
-//Get References to the form and result elements
-  const form = document.querySelector("form");
-  const reveal = document.getElementById("results");
-  const results = document.getElementById("output");
 
 
-//Wait for the DOM to load
-window.addEventListener("load", function() {
-//Add event listener to the form submit event
-form.addEventListener("submit", function(event) {
-  event.preventDefault(); //Prevent form submission
-  result(event); // Call the function to determine the recommended language,
-  });
+window.addEventListener("load", function(){ //Wait for the DOM to load
+  const form = document.querySelector("form"); //Get References to the form
+  form.addEventListener("submit", calc)
 });
 
 //Function to determine the recommended language based on survey responses
-function result(event) {
-  let recommendedLanguage = document.getElementById("results");
+function calc(event) {
+  let recommendedLanguage = document.getElementById("bigreveal");
   recommendedLanguage.removeAttribute("class");
   event.preventDefault();
 
@@ -34,7 +26,7 @@ function result(event) {
   const q5 = document.getElementById("question5Input").value;
 
   //Branching
-  let result;
+  let calc;
   if (q1 ==="Yes") {
     result = python;
   } else if (q2 === "Yes") {
@@ -49,5 +41,10 @@ function result(event) {
     result = "Please provide valid survey responses.";
   }
 
-document.getElementById("output").innerText = result;
+document.getElementById("output").innerText = calc;
+
+//Get References to the result elements
+let reveal = document.getElementById("results");
+reveal.removeAttribute("class")
+event.preventDefault();
 }
