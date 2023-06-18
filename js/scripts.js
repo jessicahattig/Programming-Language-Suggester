@@ -6,17 +6,12 @@ const js = "JavaScript is a versatile, interpreted language primarily used for f
 const c = "C# (pronounced C-sharp) is a statically-typed language developed by Microsoft. It is commonly used for building Windows applications, web applications, and games using the .NET framework. C# emphasizes strong typing, scalability, and performance."
 
 
-
-window.addEventListener("load", function(){ //Wait for the DOM to load
-  const form = document.querySelector("form"); //Get References to the form
-  form.addEventListener("submit", calc)
-});
-
 //Function to determine the recommended language based on survey responses
 function calc(event) {
   let recommendedLanguage = document.getElementById("bigreveal");
-  recommendedLanguage.removeAttribute("class");
+  recommendedLanguage.removeAttribute("class")
   event.preventDefault();
+
 
   //Get Survey values
   const q1 = document.getElementById("question1Input").value;
@@ -51,3 +46,8 @@ function calc(event) {
 
 document.getElementById("result").innerText =calc;
 }
+
+window.addEventListener("load", function(){ //Wait for the DOM to load
+  const form = document.querySelector("form"); //Get References to the form
+  form.addEventListener("submit", calc)
+});
