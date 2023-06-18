@@ -5,22 +5,25 @@ const js = "JavaScript is a versatile, interpreted language primarily used for f
 const go = "Go (often referred to as Golang) is a statically-typed, compiled language developed by Google. It is designed for efficiency and simplicity, offering built-in support for concurrency. Go is often used for developing scalable network applications, system tools, and distributed systems."
 const c = "C# (pronounced C-sharp) is a statically-typed language developed by Microsoft. It is commonly used for building Windows applications, web applications, and games using the .NET framework. C# emphasizes strong typing, scalability, and performance."
 
-
-//Wait for the DOM to load
-window.addEventListener("load", function() {
 //Get References to the form and result elements
   const form = document.querySelector("form");
   const reveal = document.getElementById("results");
   const results = document.getElementById("output");
 
+
+//Wait for the DOM to load
+window.addEventListener("load", function() {
 //Add event listener to the form submit event
 form.addEventListener("submit", function(event) {
   event.preventDefault(); //Prevent form submission
+  result(event); // Call the function to determine the recommended language,
+  });
+});
 
-//Call the function to determine the recommended language, calc results and display recommended language
+//Function to determine the recommended language based on survey responses
 function result(event) {
   let recommendedLanguage = document.getElementById("results");
-  recommendedLanguage.removeAttribute("class")
+  recommendedLanguage.removeAttribute("class");
   event.preventDefault();
 
   //Get Survey values
@@ -42,16 +45,8 @@ function result(event) {
     result = go;
   } else if (q5 === "Yes") {
     result = c;
-  } else if (q1 === "No") {
-    result = ruby;
-  } else if (q2 === "No") {
-    result = js;
-  } else if (q3 === "No") {
-    result = python;
-  } else if (q4 === "No") {
-    result = c;
-  } else if (q5 === "No") {
-    result = go;
+  } else {
+    result = "Please provide valid survey responses.";
   }
 
 document.getElementById("output").innerText = result;
