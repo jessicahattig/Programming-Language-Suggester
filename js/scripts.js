@@ -1,3 +1,11 @@
+//Results options
+const python = "Python is a versatile, high-level language known for its simplicity and readability. It has a large standard library and a vibrant community. Python is widely used for web development, scientific computing, data analysis, machine learning, and automation."
+const ruby = "Ruby is a dynamic, interpreted language known for its simplicity and productivity. It has an elegant syntax that focuses on readability and is often used for web development, scripting, and prototyping."
+const js = "JavaScript is a versatile, interpreted language primarily used for front-end web development. It allows for interactive and dynamic web content, including animations, user interfaces, and browser-based applications. JavaScript is also increasingly popular for back-end development using frameworks like Node.js."
+const go = "Go (often referred to as Golang) is a statically-typed, compiled language developed by Google. It is designed for efficiency and simplicity, offering built-in support for concurrency. Go is often used for developing scalable network applications, system tools, and distributed systems."
+const c = "C# (pronounced C-sharp) is a statically-typed language developed by Microsoft. It is commonly used for building Windows applications, web applications, and games using the .NET framework. C# emphasizes strong typing, scalability, and performance."
+
+
 //Wait for the DOM to load
 window.addEventListener("load", function() {
 //Get References to the form and result elements
@@ -7,7 +15,7 @@ window.addEventListener("load", function() {
 
 //Add event listener to the form submit event
 form.addEventListener("submit", function(event) {
-  event.preventDefault();
+  event.preventDefault(); //Prevent form submission
 
 //Get Survey responses
   const q1 = document.getElementById("question1Input").value;
@@ -17,57 +25,36 @@ form.addEventListener("submit", function(event) {
   const q5 = document.getElementById("question5Input").value;
 
 //Call the function to determine the recommended language.
-  const recommendedLanguage = determineRecommendedLanguage(q1, q2, q3, q4, q5);
+  let recommendedLanguage = determineRecommendedLanguage(q1, q2, q3, q4, q5);
 
-//Function to determine the recommended language based on survey results
-function determineRecommendedLanguage (q1, q1, q3, q4, q5) {
-  if (q1 ==="Yes") {
-    result = Python;
-  } else if (q2 ==="Yes") {
-    result = Ruby;
-  } else {
-    return "C#"
-  }
-}
-
-//Display recommended language
+  //Display recommended language
 document.getElementById("output").inerText = recommendedLanguage;
 
 //Show the result section
 results.removeAttribute("class");
 });
 
-//Results options
-const python = "Python is a versatile, high-level language known for its simplicity and readability. It has a large standard library and a vibrant community. Python is widely used for web development, scientific computing, data analysis, machine learning, and automation."
-const ruby = "Ruby is a dynamic, interpreted language known for its simplicity and productivity. It has an elegant syntax that focuses on readability and is often used for web development, scripting, and prototyping."
-const js = "JavaScript is a versatile, interpreted language primarily used for front-end web development. It allows for interactive and dynamic web content, including animations, user interfaces, and browser-based applications. JavaScript is also increasingly popular for back-end development using frameworks like Node.js."
-const go = "Go (often referred to as Golang) is a statically-typed, compiled language developed by Google. It is designed for efficiency and simplicity, offering built-in support for concurrency. Go is often used for developing scalable network applications, system tools, and distributed systems."
-const c = "C# (pronounced C-sharp) is a statically-typed language developed by Microsoft. It is commonly used for building Windows applications, web applications, and games using the .NET framework. C# emphasizes strong typing, scalability, and performance."
-
-
-
-// if (question1 === "Yes") {
-//   result = "Python!";
-// } else if (question2 === "Yes") {
-//   result = "Ruby!";
-// } else if (question3 === "Yes"){
-//   result = "Javascript!"
-// } else if (question4 === "Yes"){
-//   result = "Go!"
-// } else if (question5 === "Yes"){
-//   result = "C#!"
-// }
-
-
-
-
-
-
-
-
-// function calcSurvey(event) {
-//   event.preventDefault();
-  
-// }
-
-// });
+//Function to determine the recommended language based on survey results
+function determineRecommendedLanguage (q1, q1, q3, q4, q5) {
+  if (q1 ==="Yes") {
+    result = python;
+  } else if (q2 === "Yes") {
+    result = ruby;
+  } else if (q3 === "Yes") {
+    result = js;
+  } else if (q4 === "Yes") {
+    result = go;
+  } else if (q5 === "Yes") {
+    result = c;
+  } else if (q1 === "No") {
+    result = ruby;
+  } else if (q2 === "No") {
+    result = js;
+  } else if (q3 === "No") {
+    result = python;
+  } else if (q4 === "No") {
+    result = c;
+  } else if (q5 === "No") {
+    result = go;
+  }
+};
