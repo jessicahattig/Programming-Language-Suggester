@@ -3,7 +3,8 @@
 }
 
 body {
-  background: rgba(0, 128, 0, 0.1);
+  background-image: url(https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+  color: white;
 }
 
 h1 {
@@ -15,11 +16,16 @@ h1 {
 p {
   text-align: center;
   font-family: "Georgia", Serif;
-  font-size: 25px;
+  font-size: 30px;
   
 }
 
 label {
+  font-family: "Georgia", Serif;
+  font-size: 25px;
+}
+
+input {
   font-family: "Georgia", Serif;
   font-size: 20px;
 }
@@ -27,4 +33,20 @@ label {
 div.bigreveal {
   text-align: center;
   font-family: "Georgia", Serif;
+  border: 15px solid green;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+button {
+  transition-duration: 0.4s;
+  font-size: 20px;
+  color: rgb(10, 5, 54);
+}
+
+button:hover {
+  background-color: #eb9256;
+  font-size: 20px;
 }
