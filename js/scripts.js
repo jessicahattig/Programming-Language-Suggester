@@ -11,9 +11,6 @@ window.addEventListener("load", function () {
 
   function calc(event) {
     event.preventDefault();
-
-
-   
     const q1 = document.getElementById("question1").value;
     const q2 = document.getElementById("question2").value;
     const q3 = document.getElementById("question3").value;
