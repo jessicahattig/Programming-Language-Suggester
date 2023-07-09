@@ -18,7 +18,7 @@
 
 ## Description
 
-_This website serves as a programming language suggestion tool, allowing users to answer a series of survey questions and receive personalized recommendations for coding languages to learn. By showcasing my proficiency in introductory JavaScript and web browsers, this project demonstrates my ability to create an interactive form that helps users navigate the vast landscape of programming languages and find the most suitable options for their learning journey."_
+_This website serves as a programming language suggestion tool, allowing users to answer a series of survey questions and receive personalized recommendations for coding languages to learn. By showcasing my proficiency in introductory JavaScript and web browsers, this project demonstrates my ability to create an interactive form that helps users navigate the vast landscape of programming languages and find the most suitable options for their learning journey._
 
 [GitHub Pages ](https://jessicahattig.github.io/Programming-Language-Suggester)
 
